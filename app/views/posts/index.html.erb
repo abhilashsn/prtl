@@ -1,0 +1,19 @@
+<h3> LISTING POSTS </h3>
+
+
+<table>
+	<tr> 
+		<th> Title</th>
+		<th> Description</th>
+	</tr>
+
+	<tbody>
+		<% for post in @posts%>
+
+		<tr> post.title</tr>
+		<tr> post.description</tr>
+		<tr><%= link_to "show", post_path(@posts)%></tr>
+		<tr><%= link_to "edit", edit_post_path%></tr>
+		<%end%>
+	</tbody>
+	<table>
