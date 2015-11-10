@@ -1,19 +1,23 @@
 <h3> LISTING POSTS </h3>
 
 
-<table>
-	<tr> 
-		<th> Title</th>
-		<th> Description</th>
-	</tr>
+<table border=1>
+     	<thead>
+     		<tr> 
+     			<th> slno</th>
+     			<th> Title </th>
+     			<th> Descritpion</th>
+     		</tr>
+     	</thead>
+     <tbody>
 
-	<tbody>
-		<% for post in @posts%>
-
-		<tr> post.title</tr>
-		<tr> post.description</tr>
-		<tr><%= link_to "show", post_path(@posts)%></tr>
-		<tr><%= link_to "edit", edit_post_path%></tr>
-		<%end%>
-	</tbody>
-	<table>
+     <% @posts.each_with_index do |post,index|%>
+     <tr> 
+     	<td> <%= index + 1 %> </td>
+     	  <td> <%= post.title %></td>
+     	  <td> <%= post.description%></td>
+          <td> <%= link_to "show", post%></td>
+     </tr>
+     <%end%>
+ </tbody>
+</table>

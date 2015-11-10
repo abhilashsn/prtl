@@ -1,0 +1,13 @@
+<h3> create posts</h3>
+
+<%= form_for @posts do |p|%>
+
+<label> Title </label><br/>
+<%= p.text_field :title%><br/>
+
+<label> Description</label><br/>
+<%= p.text_area :description%><br/>
+
+<%= p.submit %>
+<%end%>  
+
