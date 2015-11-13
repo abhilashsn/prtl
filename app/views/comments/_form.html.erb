@@ -1,0 +1,9 @@
+<%= form_for([@post, @post.comments.build]) do |f|%>
+	<div class="form-group">
+
+	<p class="des"><%= f.text_area :description, :class => "form_control"%></p>
+	<%= button_tag(type: 'submit', class: "btn btn-warning") do %>
+    <i class="icon-ok icon-white"></i> Save
+  <% end %>
+  </div>
+	<%end%>

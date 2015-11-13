@@ -1,0 +1,9 @@
+<h3 style="color:#FE6F5E">Edit Information</h3><br/>
+<%= form_for([@post, @post.comments.build]) do |f|%>
+	<div class="form-group">
+	<%= f.text_area :description, :class => "form_control"%></br>
+	<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    <i class="icon-ok icon-white"></i> Save
+  	<%end%>
+	</div>
+	<%end%>

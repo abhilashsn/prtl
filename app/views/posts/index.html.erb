@@ -1,23 +1,13 @@
-<h3> LISTING POSTS </h3>
 
 
-<table border=1>
-     	<thead>
-     		<tr> 
-     			<th> slno</th>
-     			<th> Title </th>
-     			<th> Descritpion</th>
-     		</tr>
-     	</thead>
-     <tbody>
+<% @posts.each do |post|%>
 
-     <% @posts.each_with_index do |post,index|%>
-     <tr> 
-     	<td> <%= index + 1 %> </td>
-     	  <td> <%= post.title %></td>
-     	  <td> <%= post.description%></td>
-          <td> <%= link_to "show", post%></td>
-     </tr>
-     <%end%>
- </tbody>
-</table>
+<h4 style="color:#03C03C"><%= link_to post.title.upcase, post%><h4>
+
+
+
+<small style="color:#CD5B45">by <%= post.user.email%> created at <%= time_ago_in_words(post.created_at)%> ago <small>  </br> </br>
+
+<%end%>
+
+

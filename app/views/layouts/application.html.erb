@@ -7,8 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="container">
+	<h1 style="background-color:lightgrey"><%= link_to "Abhilash's Forum For The Real Enthusiasts", root_path%></h1>
 
+	<% if user_signed_in?%>
+				<%= link_to "New Post", new_post_path%>
+				<%= link_to "sign_out", destroy_user_session_path, method: :delete%>
+				<% else%>
+				
+					<%= link_to "Sign Up", new_user_registration_path%>			
+					<%=link_to "Sign In", new_user_session_path%>
+					
+	<%end%>
+
+
+ <p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+ 
 <%= yield %>
+</div>
 
 </body>
 </html>
