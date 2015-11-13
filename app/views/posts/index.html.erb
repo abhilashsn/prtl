@@ -2,11 +2,11 @@
 
 <% @posts.each do |post|%>
 
-<h4 style="color:#03C03C"><%= link_to post.title.upcase, post%><h4>
+<h4 style="color:red"><%= link_to post.title.upcase, post%></h4>
 
 
 
-<small style="color:#CD5B45">by <%= post.user.email%> created at <%= time_ago_in_words(post.created_at)%> ago <small>  </br> </br>
+<h5 style="color:#CD5B45">by <%= post.user.email%> created at <%= time_ago_in_words(post.created_at)%> ago </h5>  </br> </br>
 
 <%end%>
 
